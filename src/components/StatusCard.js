@@ -1,5 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Card from 'react-bootstrap/card'
+import Button from 'react-bootstrap/button';
 
 
 
@@ -12,7 +14,10 @@ class Status extends React.Component{
   render(){
   return (
     <>
+    <Card>
     THIS IS A STATUS I HAVE POSTED
+    <Button variant = "outline-primary">I Like it!</Button>
+    </Card>
     </>
   );
 }

@@ -20,6 +20,11 @@ class Update extends React.Component{
     this.setState(newState)
   }
 
+  submitHandler(event){
+    event.preventDefault();
+    console.log("clicked")
+  }
+
   render(){
   return (
     <>
@@ -32,7 +37,7 @@ class Update extends React.Component{
 
       <Form.Group controlId = "status"> 
         <Form.Label>Status</Form.Label>
-        <Form.control name = "status" type = "text" value = {this.state.status} onChange = {(e) => this.handleChange(e)} />
+        <Form.Control name = "status" type = "text" value = {this.state.status} onChange = {(e) => this.handleChange(e)} />
       </Form.Group>
 
       <Button variant = "outline-primary" type = "submit">Post</Button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/container'
 import './App.scss';
 import Status from './components/StatusCard';
 import Update from './components/UpdateStatus';
@@ -14,9 +15,11 @@ class App extends React.Component{
   render(){
   return (
     <>
-      <Update />
-      <br />
-      <Status />
+      <Container>
+        <Update />
+        <br />
+        <Status />
+      </Container>
     </>
   );
 }
