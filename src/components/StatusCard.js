@@ -15,7 +15,8 @@ class Status extends React.Component{
   return (
     <>
     <Card>
-    THIS IS A STATUS I HAVE POSTED
+    <h2>UserName</h2>
+    <h4>This is a status I have posted</h4>
     <Button variant = "outline-primary">I Like it!</Button>
     </Card>
     </>
