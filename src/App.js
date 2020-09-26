@@ -14,9 +14,9 @@ class App extends React.Component{
   render(){
   return (
     <>
-      < Update />
+      <Update />
       <br />
-      < Status />
+      <Status />
     </>
   );
 }
