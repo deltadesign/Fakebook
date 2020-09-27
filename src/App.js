@@ -12,11 +12,15 @@ class App extends React.Component{
   this.state = {}
   }
 
+  updateStatus(){
+    console.log("Hello from app.js")
+  }
+
   render(){
   return (
     <>
       <Container>
-        <Update />
+        <Update onpost = {() => this.updateStatus()} />
         <br />
         <Status />
       </Container>

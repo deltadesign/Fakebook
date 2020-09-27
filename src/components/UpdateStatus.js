@@ -22,7 +22,13 @@ class Update extends React.Component{
 
   submitHandler(event){
     event.preventDefault();
-    console.log("clicked")
+    this.props.onpost(this.state.id, this.state.username, this.state.status);
+    this.setState({
+      id: "",
+      username: "",
+      status: "",
+    })
+    
   }
 
   render(){
@@ -32,12 +38,12 @@ class Update extends React.Component{
 
       <Form.Group controlId = "username">
         <Form.Label>Username</Form.Label>
-        <Form.Control name = "username" type = "text" value = {this.state.username} onChange = {(e) => this.handleChange(e)}/>
+        <Form.Control name = "username" type = "text" value = {this.state.username} onChange = {(e) => this.handleChange(e)} required />
       </Form.Group>
 
       <Form.Group controlId = "status"> 
         <Form.Label>Status</Form.Label>
-        <Form.Control name = "status" type = "text" value = {this.state.status} onChange = {(e) => this.handleChange(e)} />
+        <Form.Control name = "status" type = "text" value = {this.state.status} onChange = {(e) => this.handleChange(e)} required />
       </Form.Group>
 
       <Button variant = "outline-primary" type = "submit">Post</Button>
