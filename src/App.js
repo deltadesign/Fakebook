@@ -1,10 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/container'
-import './App.scss';
+import Container from 'react-bootstrap/container';
+import Navbar  from 'react-bootstrap/Navbar';
 import Status from './components/StatusCard';
 import Update from './components/UpdateStatus';
-
+import './App.scss';
 
 class App extends React.Component{
   constructor(props){
@@ -19,11 +19,18 @@ class App extends React.Component{
   render(){
   return (
     <>
-      <Container className = "container">
+      <Navbar bg="light" expand="md">
+        <Navbar.Brand>FakeBook</Navbar.Brand>
+      </Navbar>
+
+      <Container className = "update_status_container">
         <Update onpost = {() => this.updateStatus()} />
-        <br />
+      </Container>
+
+      <Container className = "status_card_container">
         <Status />
       </Container>
+      
     </>
   );
 }

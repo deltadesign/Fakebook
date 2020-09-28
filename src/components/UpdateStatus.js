@@ -2,6 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Form from 'react-bootstrap/form'
 import Button from 'react-bootstrap/button'
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
 
 
 class Update extends React.Component{
@@ -11,6 +13,23 @@ class Update extends React.Component{
     id: "",
     username: "",
     status: "",
+  }
+  toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
   }
   }
 
@@ -23,6 +42,7 @@ class Update extends React.Component{
   submitHandler(event){
     event.preventDefault();
     this.props.onpost(this.state.id, this.state.username, this.state.status);
+    toastr.info("You should be able to view this on the timeline", "Posted!")
     this.setState({
       id: "",
       username: "",
