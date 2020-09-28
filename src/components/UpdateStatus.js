@@ -27,7 +27,7 @@ class Update extends React.Component{
     "extendedTimeOut": "1000",
     "showEasing": "swing",
     "hideEasing": "linear",
-    "showMethod": "fadeIn",
+    "showMethod": "show",
     "hideMethod": "fadeOut"
   }
   }
@@ -38,12 +38,12 @@ class Update extends React.Component{
     this.setState(newState)
   }
 
-  id = 0;
+  id = 1;
 
   submitHandler(event){
     event.preventDefault();
     this.props.onpost( this.id, this.state.username, this.state.status, 0);
-    toastr.info("You should be able to view this on the timeline", "Posted!");
+    toastr.success("You should be able to view this on the timeline", "Posted!");
     this.setState({
       username: "",
       status: "",
@@ -54,19 +54,20 @@ class Update extends React.Component{
   render(){
   return (
     <>
-    <Form onSubmit = {(e) => this.submitHandler(e)}> 
+    
+    <Form onSubmit = {(e) => this.submitHandler(e)} className = "updateform"> 
 
       <Form.Group controlId = "username">
-        <Form.Label>Username</Form.Label>
-        <Form.Control name = "username" type = "text" value = {this.state.username} onChange = {(e) => this.handleChange(e)} required />
+        
+        <Form.Control name = "username" type = "text" value = {this.state.username} placeholder="Username" onChange = {(e) => this.handleChange(e)} required />
       </Form.Group>
 
       <Form.Group controlId = "status"> 
-        <Form.Label>Status</Form.Label>
-        <Form.Control name = "status" type = "text" value = {this.state.status} onChange = {(e) => this.handleChange(e)} required />
+        
+        <Form.Control name = "status" type = "text" value = {this.state.status} placeholder="Status" onChange = {(e) => this.handleChange(e)} required />
       </Form.Group>
 
-      <Button variant = "outline-primary" type = "submit">Post</Button>
+      <Button variant = "outline-light" type = "submit">Post</Button>
 
     </Form>
     </>

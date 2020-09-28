@@ -1,17 +1,23 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/container';
+import Nav from 'react-bootstrap/nav';
 import Navbar  from 'react-bootstrap/Navbar';
 import Status from './components/StatusCard';
 import Update from './components/UpdateStatus';
+import {HashRouter as Router,
+  Switch,
+  Route,
+  Link
+  } from "react-router-dom";
 import './App.scss';
 
 class App extends React.Component{
   constructor(props){
   super(props)
   this.state = {
-    posts:[]
-  }
+    posts:[{id:0, username:"Daniel Thomas", status:"Hello World!", likes:0}]
+    }
   }
 
   createposts() {
@@ -53,21 +59,45 @@ class App extends React.Component{
     }))
   }
 
+  // componentDidMount () {
+  //   const postsContents = localStorage.getItem("posts");
+  //   this.setState(
+  //     {posts: JSON.parse(postsContents) || []}
+  //   )
+  // }
+
   render(){
   return (
     <>
-      <Navbar bg="light" expand="md">
+    <Router>
+      <Navbar bg="light" expand="md" className = "nav">
         <Navbar.Brand>FakeBook</Navbar.Brand>
+        <Navbar.Toggle aria-controls = "basic-navbar-nav" />
+        <Navbar.Collapse id= "basic-navbar-controls">
+        <Nav className = "mr-auto navlinks">
+          <div className = "navlinks">
+            <Link to = "/">Timeline</Link>
+            <Link to = "/update">New</Link>
+          </div>
+        </Nav>
+        </Navbar.Collapse>
       </Navbar>
 
-      <Container className = "update_status_container">
-        <Update onpost = {(id,username, status, likes) => this.updateStatus(id,username, status, likes)} />
+      <Container className="main">
+        <Switch>
+          <Route path ="/update">
+            <Update onpost = {(id,username, status, likes) => this.updateStatus(id,username, status, likes)} />
+          </Route>
+          <Route exact path = "/">
+            {this.createposts()}
+          </Route>
+          <Route path = "/">
+            <h1>ERROR 404 NOT FOUND</h1>
+          </Route>
+        {/* <pre>{JSON.stringify(this.state)}</pre> */}
+        </Switch>
       </Container>
-
-      <Container className = "status_card_container">
-        {this.createposts()}
-      </Container>
-      {/* <pre>{JSON.stringify(this.state)}</pre> */}
+    </Router>
     </>
   );
 }

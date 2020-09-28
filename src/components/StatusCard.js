@@ -17,25 +17,17 @@ class Status extends React.Component{
   render(){
   return (
     <>
-    <Card className = "statusCard">
-      <Row>
-        <Col>
-          <h2>{this.props.username}</h2>
-        </Col>
-      </Row>
-      <Row className = "justify-content-md-center">
-        <Col md="auto">
-          <h4>{this.props.status}</h4>
-        </Col>
-      </Row>
+    <Card className="status_card">
+      <Card.Title>{this.props.username}</Card.Title>
+      <Card.Body>{this.props.status}</Card.Body>
       <Row>
         <Col md={11}>
           {/* empty column */}
         </Col>
         <Col md={1}>
-        <div className="buttonbox">
-          <Button variant = "outline-primary" onClick = {() => this.props.increaseLikes()}>▲</Button>
-          <Button variant = "outline-primary" onClick = {() => this.props.decreaseLikes()}>▼</Button>
+          <div className="buttonbox">
+          <Button variant = "outline-success" onClick = {() => this.props.increaseLikes()}>▲</Button>
+          <Button variant = "outline-danger" onClick = {() => this.props.decreaseLikes()}>▼</Button>
           <div className="likes">{this.props.likes}</div>
           </div>
         </Col>

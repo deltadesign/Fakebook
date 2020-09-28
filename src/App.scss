@@ -2,28 +2,34 @@ $brandcolor: #3b5998;
 $brandbackground: #f4f4f4;
 $brandborder: solid 1px #333;
 
+.nav {
+    border-bottom: $brandborder;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: space-between;
+  width: 7.5rem;
+  
+}
+
 body {
-  background: $brandcolor;
+  background: url(https://cdn.dribbble.com/users/3949882/screenshots/6957914/pattern_2.jpg);
+  
 }
 
-.update_status_container {
-  background: $brandbackground;
-  padding-bottom: 0.5rem;
-  border-radius: 0.25rem;
-  margin-top: 1rem;
-  border: $brandborder;
-}
-
-.status_card_container {
+.main {
+  background: rgba(59,89,152,0.95);
   padding: 0.5rem;
+  margin-top: 0.75rem;
+  
   border-radius: 0.25rem;
-  margin-top: 0.5rem;
-  background: $brandcolor;
 }
 
-.statusCard {
-  padding: 0.5rem;
-  margin: 0.5rem;
+.status_card {
+  margin: 0.75rem;
+  padding: 0.25rem;
+  
 }
 
 .buttonbox {
