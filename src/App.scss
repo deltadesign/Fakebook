@@ -1,1 +1,32 @@
 $brandcolor: #3b5998;
+$brandbackground: #f4f4f4;
+$brandborder: solid 1px #333;
+
+body {
+  background: $brandcolor;
+}
+
+.container {
+  background: $brandbackground;
+  padding-bottom: 0.5rem;
+  
+}
+
+.statusCard {
+  padding: 0.5rem;
+  box-shadow: 2.5px 2.5px $brandcolor;
+}
+
+.buttonbox {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 2.5rem;
+
+}

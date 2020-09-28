@@ -19,7 +19,7 @@ class App extends React.Component{
   render(){
   return (
     <>
-      <Container>
+      <Container className = "container">
         <Update onpost = {() => this.updateStatus()} />
         <br />
         <Status />
