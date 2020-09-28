@@ -10,7 +10,6 @@ class Update extends React.Component{
   constructor(props){
   super(props)
   this.state = {
-    id: "",
     username: "",
     status: "",
   }
@@ -32,23 +31,24 @@ class Update extends React.Component{
     "hideMethod": "fadeOut"
   }
   }
-
+  
   handleChange(event){
     const newState = {};
     newState[event.target.name] = event.target.value;
     this.setState(newState)
   }
 
+  id = 0;
+
   submitHandler(event){
     event.preventDefault();
-    this.props.onpost(this.state.id, this.state.username, this.state.status);
-    toastr.info("You should be able to view this on the timeline", "Posted!")
+    this.props.onpost( this.id, this.state.username, this.state.status, 0);
+    toastr.info("You should be able to view this on the timeline", "Posted!");
     this.setState({
-      id: "",
       username: "",
       status: "",
-    })
-    
+    });
+    this.id ++;
   }
 
   render(){

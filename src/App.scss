@@ -3,7 +3,7 @@ $brandbackground: #f4f4f4;
 $brandborder: solid 1px #333;
 
 body {
-  background: $brandbackground;
+  background: $brandcolor;
 }
 
 .update_status_container {
@@ -23,6 +23,7 @@ body {
 
 .statusCard {
   padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 .buttonbox {

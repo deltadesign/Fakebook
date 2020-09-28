@@ -12,18 +12,20 @@ class Status extends React.Component{
   this.state = {}
   }
 
+
+
   render(){
   return (
     <>
     <Card className = "statusCard">
       <Row>
         <Col>
-          <h2>UserName</h2>
+          <h2>{this.props.username}</h2>
         </Col>
       </Row>
       <Row className = "justify-content-md-center">
         <Col md="auto">
-          <h4>This is a status I have posted</h4>
+          <h4>{this.props.status}</h4>
         </Col>
       </Row>
       <Row>
@@ -32,9 +34,9 @@ class Status extends React.Component{
         </Col>
         <Col md={1}>
         <div className="buttonbox">
-          <Button variant = "outline-primary">▲</Button>
-          <Button variant = "outline-primary">▼</Button>
-          <div className="likes">0</div>
+          <Button variant = "outline-primary" onClick = {() => this.props.increaseLikes()}>▲</Button>
+          <Button variant = "outline-primary" onClick = {() => this.props.decreaseLikes()}>▼</Button>
+          <div className="likes">{this.props.likes}</div>
           </div>
         </Col>
       </Row>
