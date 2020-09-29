@@ -42,7 +42,7 @@ class Update extends React.Component{
 
   submitHandler(event){
     event.preventDefault();
-    this.props.onpost( this.id, this.state.username, this.state.status, 0);
+    this.props.onpost(this.id, this.state.username, this.state.status, 0);
     toastr.success("You should be able to view this on the timeline", "Posted!");
     this.setState({
       username: "",
@@ -58,12 +58,10 @@ class Update extends React.Component{
     <Form onSubmit = {(e) => this.submitHandler(e)} className = "updateform"> 
 
       <Form.Group controlId = "username">
-        
         <Form.Control name = "username" type = "text" value = {this.state.username} placeholder="Username" onChange = {(e) => this.handleChange(e)} required />
       </Form.Group>
 
       <Form.Group controlId = "status"> 
-        
         <Form.Control name = "status" type = "text" value = {this.state.status} placeholder="Status" onChange = {(e) => this.handleChange(e)} required />
       </Form.Group>
 

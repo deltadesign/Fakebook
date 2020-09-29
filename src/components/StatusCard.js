@@ -12,23 +12,21 @@ class Status extends React.Component{
   this.state = {}
   }
 
-
-
   render(){
   return (
     <>
     <Card className="status_card">
-      <Card.Title>{this.props.username}</Card.Title>
-      <Card.Body>{this.props.status}</Card.Body>
+        <Card.Title>{this.props.username}</Card.Title>
+        <Card.Body>{this.props.status}</Card.Body>
       <Row>
         <Col md={11}>
           {/* empty column */}
         </Col>
         <Col md={1}>
           <div className="buttonbox">
-          <Button variant = "outline-success" onClick = {() => this.props.increaseLikes()}>▲</Button>
-          <Button variant = "outline-danger" onClick = {() => this.props.decreaseLikes()}>▼</Button>
-          <div className="likes">{this.props.likes}</div>
+            <Button variant = "outline-success" onClick = {() => this.props.increaseLikes()}>▲</Button>
+            <Button variant = "outline-danger" onClick = {() => this.props.decreaseLikes()}>▼</Button>
+            <div className="likes">{this.props.likes}</div>
           </div>
         </Col>
       </Row>

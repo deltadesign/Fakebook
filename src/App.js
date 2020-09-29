@@ -74,12 +74,12 @@ class App extends React.Component{
         <Navbar.Brand>FakeBook</Navbar.Brand>
         <Navbar.Toggle aria-controls = "basic-navbar-nav" />
         <Navbar.Collapse id= "basic-navbar-controls">
-        <Nav className = "mr-auto navlinks">
-          <div className = "navlinks">
-            <Link to = "/">Timeline</Link>
-            <Link to = "/update">New</Link>
-          </div>
-        </Nav>
+          <Nav className = "mr-auto navlinks">
+            <div className = "navlinks">
+              <Link to = "/">Timeline</Link>
+              <Link to = "/update">New</Link>
+            </div>
+          </Nav>
         </Navbar.Collapse>
       </Navbar>
 
