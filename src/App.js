@@ -16,7 +16,7 @@ class App extends React.Component{
   constructor(props){
   super(props)
   this.state = {
-    posts:[{id:0, username:"Daniel Thomas", status:"Hello World!", likes:0}]
+    posts:[]
     }
   }
 
@@ -43,7 +43,7 @@ class App extends React.Component{
     })
     this.setState((state) => ({
       posts: state.posts
-    }))
+    }), () => {localStorage.setItem("posts", JSON.stringify(this.state.posts))})
   }
 
   decreaseLikes(id){
@@ -56,7 +56,7 @@ class App extends React.Component{
     })
     this.setState((state) => ({
       posts: state.posts
-    }))
+    }), () => {localStorage.setItem("posts", JSON.stringify(this.state.posts))})
   }
 
   componentDidMount () {
