@@ -30,7 +30,7 @@ class App extends React.Component{
     const newPost = {id, username, status, likes}
     this.setState((state)=>({
       posts: state.posts.concat(newPost)
-    }))
+    }), () => {localStorage.setItem("posts", JSON.stringify(this.state.posts))})
   }
 
   increaseLikes(id){
@@ -59,12 +59,12 @@ class App extends React.Component{
     }))
   }
 
-  // componentDidMount () {
-  //   const postsContents = localStorage.getItem("posts");
-  //   this.setState(
-  //     {posts: JSON.parse(postsContents) || []}
-  //   )
-  // }
+  componentDidMount () {
+    const postsContents = localStorage.getItem("posts");
+    this.setState(
+      {posts: JSON.parse(postsContents) || [{id:0, username:"Daniel Thomas", status:"Hello World!", likes:0}]}
+    )
+  }
 
   render(){
   return (
