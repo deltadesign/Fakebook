@@ -55,7 +55,7 @@ class Update extends React.Component{
   return (
     <>
     
-    <Form onSubmit = {(e) => this.submitHandler(e)} className = "updateform"> 
+    <Form onSubmit = {(e) => this.submitHandler(e)} className = "bg-secondary p-3 rounded mt-2"> 
 
       <Form.Group controlId = "username">
         <Form.Control name = "username" type = "text" value = {this.state.username} placeholder="Username" onChange = {(e) => this.handleChange(e)} required />
