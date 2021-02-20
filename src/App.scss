@@ -2,6 +2,16 @@ $brandcolor: #3b5998;
 $brandbackground: #f4f4f4;
 $brandborder: solid 1px #333;
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: lightblue;
+}
+
 .nav {
     border-bottom: $brandborder;
 }
@@ -10,31 +20,20 @@ $brandborder: solid 1px #333;
   display: flex;
   justify-content: space-between;
   width: 7.5rem;
-  
 }
 
-body {
-  background: url(https://cdn.dribbble.com/users/3949882/screenshots/6957914/pattern_2.jpg);
-  
-}
-
-.main {
-  background: rgba(59,89,152,0.95);
-  padding: 0.5rem;
-  margin-top: 0.75rem;
-  
-  border-radius: 0.25rem;
-}
-
-.status_card {
-  margin: 0.75rem;
-  padding: 0.25rem;
-  
+.status-card{
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  background-color: #668ad6;
 }
 
 .buttonbox {
+  width: fit-content;
   display: flex;
-  justify-content: flex-end;
+  align-self: flex-end;
+  border: 2px solid white;
 }
 
 .buttonbox Button {
@@ -46,5 +45,4 @@ body {
   justify-content: center;
   align-items: center;
   min-width: 2.5rem;
-
 }

@@ -22,7 +22,13 @@ class App extends React.Component{
 
   createposts() {
     return this.state.posts.map((current,i) => (
-      < Status key = {i} id = {current.id} username = {current.username} status = {current.status} likes = {current.likes} increaseLikes = {(key) => this.increaseLikes(current.id)} decreaseLikes = {(key) => this.decreaseLikes(current.id)}/>
+      < Status key = {i} 
+      id = {current.id} 
+      username = {current.username} 
+      status = {current.status} 
+      likes = {current.likes} 
+      increaseLikes = {(key) => this.increaseLikes(current.id)} 
+      decreaseLikes = {(key) => this.decreaseLikes(current.id)} />
     ))
   }
 

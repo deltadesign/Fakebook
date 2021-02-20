@@ -2,38 +2,24 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card from 'react-bootstrap/card'
 import Button from 'react-bootstrap/button';
-import Row from 'react-bootstrap/row';
-import Col from 'react-bootstrap/col';
 
-
-class Status extends React.Component{
-  constructor(props){
-  super(props)
-  this.state = {}
+export default class Status extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
   }
 
-  render(){
-  return (
-    <>
-    <Card className="status_card">
-        <Card.Title>{this.props.username}</Card.Title>
-        <Card.Body>{this.props.status}</Card.Body>
-      <Row>
-        <Col md={11}>
-          {/* empty column */}
-        </Col>
-        <Col md={1}>
-          <div className="buttonbox">
-            <Button variant = "outline-success" onClick = {() => this.props.increaseLikes()}>▲</Button>
-            <Button variant = "outline-danger" onClick = {() => this.props.decreaseLikes()}>▼</Button>
+  render() {
+    return (
+        <div className="status-card mt-3 p-3 rounded">
+          <Card.Title className="text-dark">{this.props.username}</Card.Title>
+          <Card.Body className="bg-light rounded mb-3 text-center">{this.props.status}</Card.Body>
+          <div className="buttonbox bg-light rounded p-1">
+            <Button variant="outline-success" onClick={() => this.props.increaseLikes()}>▲</Button>
+            <Button variant="outline-danger" onClick={() => this.props.decreaseLikes()}>▼</Button>
             <div className="likes">{this.props.likes}</div>
           </div>
-        </Col>
-      </Row>
-    </Card>
-    </>
-  );
+        </div>
+    );
+  }
 }
-}
-
-export default Status;
